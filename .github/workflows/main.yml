@@ -94,8 +94,7 @@ jobs:
         done
         cd artifact && md5sum *.ipk > md5sum.txt
         cd ..
-        wget -O release.txt $RELEASE_URL
-        echo -e "\nUpdated at $(date)" >> release.txt
+
 
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
@@ -104,7 +103,6 @@ jobs:
       with:
         name: ${{ env.KMOD_VERSION }}
         tag_name: ${{ env.KMOD_VERSION }}
-        body_path: release.txt
         files: artifact/**/*
 
     - name: Remove old Releases
