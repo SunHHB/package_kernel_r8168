@@ -10,7 +10,7 @@ on:
 
 env:
   KMOD_VERSION: 8.052.01
-
+  RELEASE_URL: https://github.com/SunHHB/package_kernel_r8168/raw/master/.github/workflows/OpenWrt-NIC-Drivers-release.txt
 
 jobs:
   build_r8168_Modules:
@@ -94,7 +94,8 @@ jobs:
         done
         cd artifact && md5sum *.ipk > md5sum.txt
         cd ..
-
+        wget -O release.txt $RELEASE_URL
+        echo -e "\nUpdated at $(date)" >> release.txt
 
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
