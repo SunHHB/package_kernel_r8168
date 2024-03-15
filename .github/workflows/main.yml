@@ -46,7 +46,9 @@ jobs:
         tar xvf $sdk.tar.xz
 
         mkdir -p $sdk/package/r8168
-        cp -r $GITHUB_WORKSPACE $sdk/package/r8168
+        cp -r patches $sdk/package/r8168
+        cp -r src $sdk/package/r8168
+        cp -r Makefile $sdk/package/r8168
 
     - name: Compile
       run: |
