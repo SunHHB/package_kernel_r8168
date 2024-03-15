@@ -45,8 +45,8 @@ jobs:
         wget $url
         tar xvf $sdk.tar.xz
 
-        mkdir -p $sdk/package
-        cp -r r8168 $sdk/package/
+        mkdir -p $sdk/package/r8168
+        cp -r $GITHUB_WORKSPACE $sdk/package/r8168
 
     - name: Compile
       run: |
