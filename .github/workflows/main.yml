@@ -9,6 +9,7 @@ on:
 
 
 env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
   KMOD_VERSION: 8.052.01
   RELEASE_URL: https://github.com/SunHHB/package_kernel_r8168/raw/master/.github/workflows/OpenWrt-NIC-Drivers-release.txt
 
@@ -105,16 +106,13 @@ jobs:
         tag_name: ${{ env.KMOD_VERSION }}
         files: artifact/**/*
 
-    - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.2.0
+    - name: Delete Old Releases
+      uses: dev-drprasad/delete-older-releases@master
       with:
-        keep_latest: 2
+        keep_latest: 2  
         delete_tags: true
-        delete_tag_pattern: ${{ env.KMOD_VERSION }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
 
     - name: Delete Artifacts
-      uses: geekyeggo/delete-artifact@v1
+      uses: geekyeggo/delete-artifact@v4
       with:
         name: ${{ env.KMOD_VERSION }}
