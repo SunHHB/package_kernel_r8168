@@ -2,8 +2,8 @@ name: Build Realtek r8168 driver for OpenWrt
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 8.**
   # schedule:
   #   - cron: "0 0 * * MON"
 
