@@ -74,7 +74,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ env.KMOD_VERSION }}
-        path: ${{ github.workspace }}/artifact/**/*
+        path: ${{ github.workspace }}/artifact/
 
   deploy:
     needs: [build_r8168_Modules]
