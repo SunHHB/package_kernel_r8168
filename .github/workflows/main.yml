@@ -22,8 +22,7 @@ jobs:
       matrix:
         sdk_url:
           - https://downloads.immortalwrt.org/releases/21.02.7/targets/x86/64/immortalwrt-sdk-21.02.7-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
-          - https://downloads.immortalwrt.org/releases/23.05.1/targets/x86/64/immortalwrt-sdk-23.05.1-x86-64_gcc-12.3.0_musl.Linux-x86_64.tar.xz
-
+          - https://downloads.immortalwrt.org/releases/23.05.3/targets/x86/64/immortalwrt-sdk-23.05.3-x86-64_gcc-12.3.0_musl.Linux-x86_64.tar.xz
     steps:
     - name: Checkout
       uses: actions/checkout@main
